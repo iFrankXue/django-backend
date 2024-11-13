@@ -8,8 +8,8 @@ WORKDIR /usr/src/djangobnb_backend
 # RUN apt-get update && apt-get install -y libpq-dev
 
 
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONBUFFERED 1
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONBUFFERED=1
 
 RUN apt-get update && apt-get install -y netcat
 
