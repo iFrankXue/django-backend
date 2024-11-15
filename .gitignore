@@ -10,3 +10,4 @@ __pycache__/
 media/
 static/
 
+djangobnb_backend/django_error.log
