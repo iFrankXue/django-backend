@@ -197,3 +197,27 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'ERROR',  # Adjust the level as needed (DEBUG, INFO, WARNING, ERROR)
+            'class': 'logging.FileHandler',
+            'filename': 'django_error.log',  # The path to your log file
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'ERROR',  # Adjust the level as needed
+            'propagate': True,
+        },
+        'my_logger': {  # Use this if you have custom loggers like the one in your api.py
+            'handlers': ['file'],
+            'level': 'DEBUG',  # Adjust as needed
+            'propagate': False,
+        },
+    },
+}
